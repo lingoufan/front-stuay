@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阴影</title>
+</head>
+<style>
+    .box {
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        margin: 20px;
+    }
+
+    /* 四周阴影 */
+    .shadow {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 左上邻边阴影 */
+    .shadow-top-left {
+        box-shadow: -10px -10px 15px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 右上邻边阴影 */
+    .shadow-top-right {
+        box-shadow: 10px -10px 15px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 左下邻边阴影 */
+    .shadow-bottom-left {
+        box-shadow: -10px 10px 15px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 右下邻边阴影 */
+    .shadow-bottom-right {
+        box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 左侧单边阴影 */
+    .shadow-left {
+        box-shadow: -15px 0 10px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 右侧单边阴影 */
+    .shadow-right {
+        box-shadow: 15px 0 10px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 顶部单边阴影 */
+    .shadow-top {
+        box-shadow: 0 -15px 10px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* 底部单边阴影 */
+    .shadow-bottom {
+        box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+<body>
+    <div class="box shadow">四周阴影</div>
+    <div class="box shadow-top-left">左上邻边阴影</div>
+    <div class="box shadow-top-right">右上邻边阴影</div>
+    <div class="box shadow-bottom-left">左下邻边阴影</div>
+    <div class="box shadow-bottom-right">右下邻边阴影</div>
+    <div class="box shadow-left">左侧单边阴影</div>
+    <div class="box shadow-right">右侧单边阴影</div>
+    <div class="box shadow-top">顶部单边阴影</div>
+    <div class="box shadow-bottom">底部单边阴影</div>
+</body>
+
+</html>

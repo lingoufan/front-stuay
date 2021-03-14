@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="father">
+        <style>
+            #father {
+                background-color: beige;
+                overflow: hidden;
+            }
+            #father .child {
+                background-color: blue;
+                margin: 15px auto 20px;
+            }
+        </style>
+        <div class="child">这是第一个div</div>
+        <div class="child">这是第二个div</div>
+    </section>
+    <br />
+
+    
+    <section id="father1">
+        <style>
+            #father1 {
+                background-color: beige;
+                overflow: auto;
+            }
+            #father1 .child {
+                font-size: 58px;
+                float: left;
+            }
+        </style>
+        <div class="child">这是一个浮动元素</div>
+    </section>
+
+    <br />
+
+    <section id="father">
+        <style>
+            #father {
+                background-color: beige;
+            }
+            #father .left {
+                background-color: blue;
+                width: 100px;
+                height: 90px;
+                float: left;
+            }
+            #father .right {
+                background-color: rgb(223, 35, 107);
+                height: 120px;
+                overflow: auto;
+            }
+        </style>
+        <div class="left"></div>
+        <div class="right"></div>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css" />
+    <title>Document</title>
+    <style>
+        :root {
+            /*总高为浏览器80%，每个div分别占三分之一高度*/
+            --div-height: 80vh / 3;
+            --gap: 5px;
+            /*div的行高为上面计算得到的自身高度，减去父容器的padding 、自身border的尺寸*/
+            --line-height: calc(var(--div-height) - var(--gap) * 4); 
+            /*定义颜色*/
+            --bg--color:#333;
+            --light-color:#f6f6f6;
+            --deep-blue-color:#225d85;
+            --blue-color: #65a1c9;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            /*Chrome Opera Safari内核*/
+            -webkit-transition: all 0.5s;
+            /*Firefox*/
+            -moz-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+        /*背景斜纹渐变，有空可以看看这些值含义*/
+        body {
+            background-color: var(--bg--color);
+            background: repeating-linear-gradient(
+                45edg,
+                var(--light-color) 0,
+                var(--light-color) 5%,
+                #fff 0,
+                #fff 50%
+            )
+            0 / 20px 20px;
+        }
+        /*父容器*/
+        #container {
+            width: 60vw;
+            height: 80vh;
+            margin: 10vh auto;
+            background-color: var(--deep-blue-color);
+            display: flex;
+            flex-wrap: wrap;
+            /*box-sizing 设置为border-box，内边距将算入自身尺寸*/
+        }
+    
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="move">move</div>
+        <div class="fade">fade</div>
+        <div class="grow">grow</div>
+        <div class="shrink">shrink</div>
+        <div class="deform">deform</div>
+        <div class="rotate">rotate</div>
+        <div class="pulse">
+            pulse
+            <div class="circle"></div>
+        </div>
+        <div>
+            heart
+            <i class="fa fa-heart " id="heart"></i>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+.g-container {
+    position: relative;
+    height: 100vh;
+    min-width: 400px;
+   }
+   .g-container > div {
+    height: 100vh;
+    float: left;
+    text-align: center;
+    color: rgb(241, 185, 185);
+    line-height: 100vh;
+    font-size: 3vw;
+   }
+   .g-middle {
+    position: relative;
+    width: 100%;
+    background: #69eca0;
+   }
+   .g-middle .g-middle-inner {
+    margin: 0 200px;
+   }
+   .g-left {
+    position: relative;
+    width: 200px;
+    background: #6ae6f7;
+    margin-left: -100%;
+   }
+   .g-right {
+    position: relative;
+    width: 200px;
+    background: rgb(95, 133, 238);
+    margin-left: -200px;
+   }

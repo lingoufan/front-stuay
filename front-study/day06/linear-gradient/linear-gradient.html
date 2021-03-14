@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渐变</title>
+    <style>
+        .tablecloth {
+            width:200px ;
+            height: 200px;
+            background: white;
+            background-image: linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0),
+                linear-gradient(rgba(200, 0, 0, .5) 50%, transparent 0);
+            background-size: 30px 30px;
+           
+        }
+        .stripes {
+            width:200px ;
+            height: 200px;
+            background-color: #fff;
+            background-size: 30px 30px;
+            background-image: repeating-linear-gradient(45deg, rgba(93,173,226) 0,rgba(93,173,226) 5%,rgba(244, 208, 63) 0 ,rgba(244, 208, 63) 10%);
+        }
+         .stripes60 {
+            width:200px ;
+            height: 200px;
+            background-color: #fff;
+            background-image: repeating-linear-gradient(60deg, rgba(93,173,226) 0,rgba(93,173,226) 5%,rgba(244, 208, 63) 0 ,rgba(244, 208, 63) 10%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tablecloth">桌布⽹格</div>
+    <div class="stripes">斜向条纹</div>
+    <div class="stripes60">60°斜向条纹</div>
+</body>
+
+</html>

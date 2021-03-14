@@ -1,0 +1,135 @@
+p::first-letter {
+    color: #c28743;
+    float: left;
+    font-size: 5em;
+    margin: 0 .2em 0 0;
+}
+/* 第一行元素*/
+p::first-line {
+    color: rgb(84, 104, 218);
+    font-size: larger;
+}
+/*p最后一元素*/
+p::after {
+    content: "❤";
+    float: right ;
+    color: red;
+    font-size: 5em;
+    margin: 0 .2em 0 0;
+}
+
+.box {
+    /* 别漏了定义宽度 */
+    width: 200px;
+}
+
+.single-line {
+    overflow: hidden;
+    white-space: nowrap;
+    /*内容溢出的显示方式*/
+    text-overflow: ellipsis;
+}
+
+.multiple-line {
+    display: -webkit-box;
+    /*盒子垂直布局内容*/
+    -webkit-box-orient: vertical;
+    /*把块容器中的内容限制为指定的行数*/
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+::selection {
+    background: #60dee2;
+    color: rgb(84, 104, 218);
+}
+
+::-moz-selection {
+    background: #154bc0;
+    color: #fff;
+}
+
+::-webkit-selection {
+    background: #9166f3;
+    color: #fff;
+}
+
+
+
+/* 切⻆样式 */
+.flex {
+    display: flex;
+}
+
+.flex div {
+    width: 150px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+/* 单个切⻆ */
+.corner {
+    background: linear-gradient(45deg, transparent 15px,
+            #74e08f 0);
+}
+
+/* 多个切⻆ */
+.corner2 {
+    background: linear-gradient(135deg, transparent 15px,
+            #ab74eb 0) top left;
+        /* linear-gradient(-135deg, transparent 15px, #5588aa 0) top right, linear-gradient(-45deg, transparent 15px,
+            #5588aa 0) bottom right,
+        linear-gradient(45deg, transparent 15px, #5588aa 0) bottom left;
+    background-size: 50% 50%; */
+    background-repeat: no-repeat;
+}
+
+/* 弧形切⻆ */
+.corner3 {
+    background: radial-gradient(circle at top left,
+            transparent 50px, #58a 0) top left,
+        radial-gradient(circle at top right, transparent 15px,
+            #5588aa 0) top right,
+        radial-gradient(circle at bottom right, transparent 15px, #5588aa 0) bottom right,
+        radial-gradient(circle at bottom left, transparent 15px, #5588aa 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+/* 遮罩条，⼀定要设置position的值，不能为默认static */
+.mask {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.mask img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 伪类选择器 */
+.mask:after {
+    content: attr(data-title);
+    position: absolute;
+    width: 100%;
+    /* 这⾥的100%很重要 */
+    top: 100%;
+    left: 0;
+    padding: 0.7em 0;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    /* 淡⼊淡出动画效果 */
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+
+/* ⿏标悬停 */
+.mask:hover:after {
+    opacity: 1;
+    -webkit-transform: translate(0, -100%);
+    transform: translate(0, -100%);
+}
