@@ -4,7 +4,7 @@ var app = new Vue({
   el: '#app',
   data: {
     students: [{
-      "id": "2",
+      "id": "5",
       "name": "⾦晨星",
       "github_name": "flobby949",
       "nickname": "flobby",
@@ -36,7 +36,7 @@ var app = new Vue({
       "signature": "仿⽣⼈也会涮电⼦⽺吗",
       "color": "#FFDCDC"
     }, {
-      "id": "4",
+      "id": "2",
       "name": "林丹丹",
       "github_name": "dandan1232",
       "nickname": "⼗⾥.",
@@ -52,7 +52,7 @@ var app = new Vue({
       "signature": "前途浩浩荡荡，万事皆可期待",
       "color": "#42A5F5"
     }, {
-      "id": "5",
+      "id": "6",
       "name": "钱锦辉",
       "github_name": "jinhuiqian",
       "nickname": "来树下",
@@ -100,7 +100,7 @@ var app = new Vue({
       "signature": "狮⼦不因⽝吠回头，鸿鹄不理燕雀喳喳。",
       "color": "\t#9900FF"
     }, {
-      "id": "12",
+      "id": "9",
       "name": "孙周⾈",
       "github_name": "szz192626",
       "nickname": "梦游记",

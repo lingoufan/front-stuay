@@ -9,7 +9,7 @@
   </head>
   <body> 
     <div id="app"> 
-      <div class="card" v-for="student in  students" :key="student.id">
+      <div class="card" v-for="student in  students" :style="{backgroundColor: student.color}" :class="arrcolor" :key="student.id">
         <div class="header"> <img class="avatar" :src="student.avatar">
           <h3>{{student.name}}</h3>
         </div>
@@ -17,7 +17,7 @@
         <p>{{student.birthday}}</p>
         <p>{{student.hobby}}</p>
         <p>{{student.signature}}</p><a :href="student.github"> github地址</a>
-      </div>
+      </div
     </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script type="text/javascript" src="./card.dev.js"> </script>

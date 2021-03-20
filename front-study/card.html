@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./card.css" />
+    <title>学生卡片</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="one" v-bind:style="color">
+        <div class="out">
+          <div class="dark">
+            <div
+              class="moon"
+              v-bind:class="className"
+              v-on:click="setColor()"
+            ></div>
+          </div>
+        </div>
+        <div class="content" v-bind:style="color">
+          <div
+            class="card"
+            v-for="student in  students"
+            :style="{backgroundColor: student.color}"
+            :class="arrcolor"
+            :key="student.id"
+          >
+            <div class="header">
+              <img class="avatar" :src="student.avatar" />
+              <h3>{{student.name}}</h3>
+            </div>
+            <p>{{student.hometown}}</p>
+            <p>{{student.birthday}}</p>
+            <p>{{student.hobby}}</p>
+            <p>{{student.signature}}</p>
+            <a :href="student.github"> github地址</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../JS/card.dev.js"></script>
+  </body>
+</html>

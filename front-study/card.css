@@ -1,0 +1,241 @@
+@media screen and (max-width: 1700px) {
+  #app {
+    width:100vw;
+  }
+  .out {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .content {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .one {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+  }
+  
+  
+  .card {
+    flex: 0 0 24%;
+    height: 320px;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 10px;
+    background-color: #b56df0;
+    color: #333;
+    cursor: pointer;
+  }
+  .card:hover {
+    opacity: 0.8;
+  }
+  .card .header {
+    display: flex;
+  }
+  
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .moon {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .moon1{
+    transform: translateX(20px);
+  } 
+
+  .dark {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    width: 45px;
+    height: 26px;
+    border-radius: 15px;
+    border: 2px black solid;
+    background: chartreuse;
+  }
+}
+
+@media screen and (min-width: 780px) and (max-width: 1250px) {
+  #app {
+    width:100vw;
+  }
+  .out {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .content {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .one {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+  }
+  
+  
+  .card {
+    flex: 0 0 48%;
+    height: 250px;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 10px;
+    background-color: #b56df0;
+    color: #333;
+    cursor: pointer;
+  }
+  .card:hover {
+    opacity: 0.8;
+  }
+  .card .header {
+    display: flex;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .moon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .moon1{
+    transform: translateX(20px);
+  } 
+
+  .dark {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    width: 35px;
+    height: 22px;
+    border-radius: 13px;
+    border: 2px black solid;
+    background: chartreuse;
+  }
+
+}
+
+@media screen and (max-width: 779px) {
+  #app {
+    width:100vw;
+  }
+  .out {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .content {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+    justify-content:center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+  .one {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+  }
+  
+  
+  .card {
+    flex: 0 0 100%;
+    height: 250px;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 10px;
+    background-color: #b56df0;
+    color: #333;
+    cursor: pointer;
+  }
+  .card:hover {
+    opacity: 0.8;
+  }
+  .card .header {
+    display: flex;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .moon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .moon1{
+    transform: translateX(20px);
+  } 
+
+  .dark {
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    width: 35px;
+    height: 22px;
+    border-radius: 13px;
+    border: 2px black solid;
+    background: chartreuse;
+  }
+
+}
