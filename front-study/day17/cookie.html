@@ -15,6 +15,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./cookie.js"></script>
+    <script src="./page-height.js"></script>
    
     <script>
         const app = new Vue({
@@ -22,7 +23,7 @@
             data: {
                 name:'',
                 age: 0,
-                height:'0'
+                height:0
             },
             created() {
                 setCookie('name','lin',20*100)
@@ -30,6 +31,7 @@
                 this.name = getCookie('name')
                 this.age = getCookie('age')
                 this.height =getPageHeight()
+                console.log(getPageHeight())
                 console.log(getCookie('name'))
                 console.log(getCookie('age'))
             }

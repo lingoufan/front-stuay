@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- <button @click="print('t1')">URL</button> -->
+    <input type="text" onkeyup="clearNoInt(this)" value="⽂本框输⼊
+    ⾮数字会被清除替换" />
+    <br>
+    <input type="text" onkeyup="clearNoFloat(this)" value="JS允许输⼊⼩数，只能是数字，如果是其他字符，则会替换掉"/>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="./js-test.js">
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {},
+      methods: {
+        getUrlParam(name) {
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+          var r = window.location.search.substr(1).match(reg);
+          console.log(window.location);
+          if (r != null) {
+            return unescape(r[2]);
+          } else {
+            return null;
+          }
+        },
+        print(name) {
+          console.log(this.getUrlParam("t1"));
+        },
+      },
+    });
+  </script>
+  <script>
+    function clearNoInt(curObj) {
+      curObj.value = curObj.value.replace(/[^\d]/g, ""); //清除“数字”和“.”以外的字符
+
+    }
+    function getOs() {
+      if (navigator.userAgent.indexOf("MSIE 8.0") > 0) {
+        return "MSIE8";
+      } else if (navigator.userAgent.indexOf("MSIE 6.0") > 0) {
+        return "MSIE6";
+      } else if (navigator.userAgent.indexOf("MSIE 7.0") > 0) {
+        return "MSIE7";
+      } else if ((isFirefox = navigator.userAgent.indexOf("Firefox") > 0)) {
+        return "Firefox";
+      }
+      if (navigator.userAgent.indexOf("Chrome") > 0) {
+        return "Chrome";
+      } else {
+        return "Other";
+      }
+      console.log(getOs());
+    }
+    /**
+  * JS⼿机类型判断
+  * @type {{userAgent: string, isAndroid: boolean,
+ isIphone: boolean, isIpad: boolean, isWeixin: boolean,
+ isChrome: boolean}}
+  */
+    var BrowserInfo = {
+      userAgent: navigator.userAgent.toLowerCase(),
+      isAndroid: Boolean(navigator.userAgent.match(/android/gi)),
+      isIphone: Boolean(navigator.userAgent.match(/iphone|ipod/gi)),
+      isIpad: Boolean(navigator.userAgent.match(/ipad/gi)),
+      isWeixin: Boolean(navigator.userAgent.match(/MicroMessenger/gi)),
+
+      isChrome: Boolean(navigator.userAgent.match(/chrome/gi)),
+    };
+    console.log(BrowserInfo);
+  </script>
+  <script>
+    /**
+* JS允许输⼊⼩数位的数字
+* @param curObj
+*/
+    function clearNoFloat(curObj) {
+      curObj.value = curObj.value.replace(/[^\d.]/g, ""); //清除“数字”和“.”以外的字符
+      curObj.value = curObj.value.replace(/^\./g, ""); //验证第⼀个字符是数字⽽不是.
+      curObj.value = curObj.value.replace(/\.{2,}/g, "."); //只保留第⼀个. 清除多余的.
+      curObj.value =
+        curObj.value.replace(".", "$#$").replace(/\./g, "").replace(
+          "$#$", ".");
+    }
+  </script>
+  <script>
+    /**
+ * JS 将object转为form data，⽅便post提交
+ * @param {Object} obj [数据对象]
+ * @return {String}
+ */
+    function encodeFormData(obj) {
+      if (!obj) return
+      let pairs = []
+      for (let name in obj) {
+        if (!obj.hasOwnProperty(name)) continue
+        if (typeof obj[name] == 'function') continue
+        var value = obj[name].toString()
+        name = encodeURIComponent(name.replace('%20', '+'))
+        value = encodeURIComponent(value.replace('%20', '+'))
+        pairs.push(name + '=' + value)
+      }
+      return pairs.join('&')
+    }
+    console.log(encodeFormData({ id: 131313, name: 'linlinlin' })) //id=1&name=hello
+  </script>
+  <script>
+    /**
+ * JS允许输⼊⼩数位的数字
+ * @param curObj
+ */
+    function clearNoFloat(curObj) {
+      curObj.value = curObj.value.replace(/[^\d.]/g, ""); //清除“数字”和“.”以外的字符
+      curObj.value = curObj.value.replace(/^\./g, ""); //验证第⼀个字符是数字⽽不是.
+      curObj.value = curObj.value.replace(/\.{2,}/g, "."); //只保留第⼀个.清除多余的.
+      curObj.value = curObj.value.replace(".", "$#$").replace(/\./g, "").replace(
+        "$#$", ".");
+    }
+  </script>
+</body>
+
+</html>
