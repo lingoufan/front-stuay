@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*使⽤⽅式很简单，有张图⽚。宽⾼都是100px;*/
+        img{
+        width:1rem;
+        height:1rem;
+        }
+        /*这样的设置，⽐如在屏幕宽度⼤于等于750px设备上，1rem=100px；
+       图⽚显示就是宽⾼都是100px*/
+        /*⽐如在iphone6(屏幕宽度：375)上，375/750*100=50px;就是
+       1rem=50px;图⽚显示就是宽⾼都是50px;*/
+       </style>
+    </style>
+</head>
+
+<body>
+    <div id="app" class="box">
+        <img src="https://pic--go.oss-cn-hangzhou.aliyuncs.com/img/20210318210451.jpg">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {},
+            methods: {},
+        })
+    </script>
+    <script>
+        /**
+ * BASE64加密
+ * @param str
+ * @returns {string}
+ */
+        function base64Encode(str) {
+            return btoa(unescape(encodeURIComponent(str)));
+        }
+        /**
+         * BASE64解密
+         * @param str
+        调⽤⽅法：
+        四⼗四、JS Url参数转对象
+        JS Url参数转对象
+        代码如下：
+        调⽤⽅法：
+         * @returns {string}
+         */
+        function base64Decode(str) {
+            return decodeURIComponent(escape(atob(str)));
+        }
+        console.log("-------------------------")
+        console.log("JS Base64字符串编码与解码")
+        console.log(base64Encode("test")); // dGVzdA==
+        console.log(base64Decode("dGVzdA==")); // test
+    </script>
+    <script>
+        /**
+ * JS Url参数转对象
+ * @param {String} url default: window.location.href
+ * @return {Object}
+ */
+        function parseQueryString(url) {
+            url = url == null ? window.location.href : url
+            var search = url.substring(url.lastIndexOf('?') + 1)
+            if (!search) {
+                return {}
+            }
+            return JSON.parse('{"' +
+                decodeURIComponent(search).replace(/"/g,
+                    '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
+        }
+        console.log('----------------------------------------------')
+        console.log("JS Url参数转对象")
+        console.log(parseQueryString("http://www.baidu.com?id = 1 & name=hello")); // {id: "1", name: "hello"}
+    </script>
+    <script>
+        /**
+ * JS判断是否为空
+ * @param val
+ * @returns {boolean}
+ */
+        function isNull(val) {
+            if (val == undefined || val == null || val == "" ||
+                val == ''
+                || val == "undefined" || val == "null" || val ==
+                "NULL") {
+                return true;
+            }
+            return false;
+        }
+        console.log("-----------------------")
+        console.log("JS判断是否为空")
+        console.log(isNull(undefined)) // true
+        console.log(isNull(null)) // true
+        console.log(isNull("")) // true
+        console.log(isNull('')) // true
+        console.log(isNull("undefined")) // true
+        console.log(isNull("null")) // true
+        console.log(isNull("NULL")) // true
+    </script>
+    <script>
+        /**
+ * JS⽣成指定位数的随机整数
+ * @param count
+ * @returns {string}
+ */
+        function getRandomNum(count) {
+            let arr = new Array
+            let reNum = ""
+            for (let i = 0; i < count; i++) {
+                arr[i] = parseInt(Math.random() * 10)
+                reNum += String(arr[i])
+            }
+            return reNum
+        }
+        console.log("---------------------")
+        console.log("JS⽣成指定位数的随机整数")
+        console.log(getRandomNum(6));
+    </script>
+    <script>
+        /**
+         * JS校验IP地址格式
+         * @param ip
+         * @returns {boolean}
+         */
+        function checkIp(ip) {
+            var regex = /^([1-9]|[1-9]\d|1\d{2}|2[0-1]\d|22[0-3])(\.(\d | [1 - 9]\d | 1\d{ 2} | 2[0 - 4]\d | 25[0 - 5])) { 3}$/
+            var b = regex.test(ip)
+            return b
+        }
+        console.log("---------------------")
+        console.log("JS校验IP地址格式")
+        console.log(checkIp("127.0.0.1")); // true
+        console.log(checkIp("0.0.0.1")); // false
+    </script>
+    <!-- <script>/**
+* JS根据⽂件名获取⽂件格式
+* @param str
+* @returns {string}
+*/
+        function getFileTypeByFileName(str) {
+            return
+            str.substr(str.lastIndexOf(".") + 1).toLowerCase();
+        }
+        console.log("----------------------")
+        console.log("JS根据⽂件名获取⽂件格式")
+        console.log(getFileTypeByFileName("index.html"));
+        //html
+        console.log(getFileTypeByFileName("index.js")); //js
+    </script> -->
+    <script>
+        /**
+         * JS在字符串中查找某⼀字符串出现的次数
+         * @param str
+         * @param strSplit
+         * @returns {number}
+         */
+        function countStr(str, strSplit) {
+            return str.split(strSplit).length - 1
+        }
+        console.log("----------")
+        console.log("JS在字符串中查找某⼀字符串出现的次数")
+        let strTest = 'sad44654blog5a1sd67as9dablog4s5d16zxc4sdweasjkblogwqepaskdkblogahseiuadbhjcibloguyeajzxkcabloguyiwezxc967'
+        countStr(strTest, "blog"); // 6
+    </script>
+    <script>
+        /**
+ * JS适配rem
+ */
+        function getFontSize() {
+            var doc = document, win = window
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ?
+                    'orientationchange' : 'resize',
+                reCalc = function () {
+                    var clientWidth = docEl.clientWidth
+                    if (!clientWidth) return
+                    //如果屏幕⼤于750（750是根据效果图设置的），就设置clientWidth = 750，防⽌font - size会超过100px
+                    if (clientWidth > 750) { clientWidth = 750 }
+                    //设置根元素font-size⼤⼩
+                    docEl.style.fontSize = 100 * (clientWidth / 750) +
+                        'px'
+                  
+                    getFontSize();
+                   
+                }
+            //屏幕⼤⼩改变，或者横竖屏切换时，触发函数
+            win.addEventListener(resizeEvt, reCalc, false)
+            //⽂档加载完成时，触发函数
+            doc.addEventListener('DOMContentLoaded', reCalc, false)
+        }
+        console.log(getFontSize())
+    </script>
+</body>
+
+</html>
