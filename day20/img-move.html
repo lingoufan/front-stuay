@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片移动</title>
+    <style>
+      div {
+        position: absolute;
+      }
+      img {
+        width: 200px;
+        height: 180px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" value="图片随机移动" id="btn1" />
+    <input type="button" value="停止" id="btn2" />
+    <div id="dv">
+      <img src="https://tva1.sinaimg.cn/large/9150e4e5ly1fo313i3fy1g206o06oglk.gif" alt="" />
+      <!-- <img src="../images/2.jpg" alt="" /> -->
+    </div>
+    <script>
+      function my$(id) {
+        return document.getElementById(id);
+      }
+      //点击按钮时两张图片移动(只要移动包含两张图片的div就行了),时间间隔1秒
+      var timeId;
+      my$("btn1").onclick = function () {
+        timeId = setInterval(function () {
+          //随机数
+          var x = parseInt(Math.random() * 100 + 1); //1-100
+          var y = parseInt(Math.random() * 100 + 20); //20-119
+          //设置元素的left和top属性值
+          my$("dv").style.left = x + "px";
+          my$("dv").style.top = y + "px";
+        }, 1000);
+      };
+
+      //停止
+      my$("btn2").onclick = function () {
+        clearInterval(timeId);
+      };
+    </script>
+  </body>
+</html>

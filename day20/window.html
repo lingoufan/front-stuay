@@ -1,0 +1,46 @@
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        //console.log(navigator.userAgent);
+        //判断浏览器类型
+        var st = navigator.userAgent;
+        if (/Chrome/i.test(st)) {
+            alert("我是谷歌");
+        } else if (/Firefox/i.test(st)) {
+            alert("我是火狐");
+        } else if (/MSIE/i.test(st)) {
+            alert("我是ie");
+        } else if ("ActiveXObject" in window) {
+            //ActiveXObject是ie11特有的函数
+            //判断window对象存在ActiveXObject函数
+            alert("我是ie11");
+        }
+    </script>
+</head>
+
+<body>
+    <!--
+        navigator.userAgent:代表的浏览器的信息【版本】--判断浏览器
+        谷歌：
+        Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36
+        
+        2.火狐
+        Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0
+        
+        3.ie8:
+        Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; InfoPath.2)
+        
+        4.ie9:
+        Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; InfoPath.2)
+        
+        5.ie10:
+        Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; InfoPath.2)
+        
+        6.ie11:
+        Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; InfoPath.2; rv:11.0) like Gecko
+        
+        JavaScript判断浏览器类型一般有两种办法
+        一种是根据各种浏览器独有的属性来分辨，另一种是通过分析浏览器的userAgent属性来判断的	
+    -->
+</body>

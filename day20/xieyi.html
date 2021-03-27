@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">  
+
+<head>    
+    <meta charset="UTF-8" />    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <title>协议按钮禁用</title>  
+</head>  
+
+<body>    <textarea id="" cols="30" rows="10">这是用户协议</textarea>    <input type="button" value="请仔细阅读协议（5）" id="btn"
+        disabled />    
+    <script>      function my$(id) { return document.getElementById(id); } let time = 5; let timeId = setInterval(() => { time--; my$("btn").value = "请仔细阅读协议(" + time + ")"; if (time == 0) { clearInterval(timeId); my$("btn").disabled = false; my$("btn").value = "同意"; } }, 1000);</script>
+     
+</body>
+
+</html>

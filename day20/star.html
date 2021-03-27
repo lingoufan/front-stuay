@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星星移动</title>
+    <style>
+      div {
+        width: 300px;
+        height: 300px;
+        border: 1px solid yellow;
+        background-color: black;
+        position: relative;
+      }
+      span {
+        font-size: 30px;
+        color: yellow;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" value="亮起来" id="btn" />
+    <div id="dv"></div>
+    <script>
+      function my$(id) {
+        return document.getElementById(id);
+      }
+
+      my$("btn").onclick = function () {
+        //点击按钮,每5毫秒移动一次星星,造成星星闪亮的效果
+        setInterval(function () {
+          my$("dv").innerHTML = "<span>★</span>";
+          var x = parseInt(Math.random() * 150 + 1);
+          var y = parseInt(Math.random() * 150 + 1);
+          //移动span
+          my$("dv").firstElementChild.style.left = x + "px";
+          my$("dv").firstElementChild.style.top = y + "px";
+        }, 5);
+      };
+    </script>
+  </body>
+</html>
